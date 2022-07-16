@@ -10,11 +10,10 @@ public:
     
     if(dp[target] != -1) return dp[target];
     int ans = 0;
-    for(int i = 0 ; i < nums.size() ; i++){
         
+    for(int i = 0 ; i < nums.size() ; i++)
         ans += dp_sol(nums , target - nums[i] , dp);
-    
-    }
+        
         return dp[target] = ans;
         
         }
