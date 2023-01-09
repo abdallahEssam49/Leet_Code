@@ -1,4 +1,4 @@
-Problem_Link : https://leetcode.com/problems/two-sum/?envType=study-plan&id=data-structure-i
+Problem_Link : https://leetcode.com/problems/two-sum/
 Profile : https://leetcode.com/abdallahessam2029/
 
 class Solution {
