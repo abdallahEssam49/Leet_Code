@@ -1,27 +1,25 @@
-Problem_Link : https://leetcode.com/problems/unique-paths/
+Problem_Link : https://leetcode.com/problems/unique-paths/description/
 Profile : https://leetcode.com/abdallahessam2029/
 
 class Solution {
 public:
-    int dp_sol(vector <int> &nums ,   int  target , vector<int> &dp){
     
-    if(target == 0) return 1;
-    if(target < 0) return 0;
-    
-    if(dp[target] != -1) return dp[target];
-    int ans = 0;
-    for(int i = 0 ; i < nums.size() ; i++){
+    int solve(int n , int m , int row , int col , vector<vector<int>>&dp)
+    {
+        if (row == n and col == m)return 1;
+        if (row > n or col > m)return 0;
         
-        ans += dp_sol(nums , target - nums[i] , dp);
-    
+        if(dp[row][col]!= -1)return dp[row][col];
+        
+        int path1 = solve(n , m , row+1 ,col , dp);
+        int path2 = solve(n , m , row ,col+1 , dp);
+        
+        return dp[row][col] = path1 + path2;
     }
-        return dp[target] = ans;
-        
-        }
     
-    int combinationSum4(vector < int > & nums, int target) {
-
-    vector<int> dp(1001 , -1);
-    return dp_sol(nums , target , dp);
-}
+    int uniquePaths(int n , int m)
+        {
+            vector<vector<int>>dp(n+1 , vector<int>(m+1 ,-1));
+            return solve(n , m , 1 ,1 , dp);
+        }
 };
