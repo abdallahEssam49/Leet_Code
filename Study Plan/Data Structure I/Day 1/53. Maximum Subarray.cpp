@@ -1,4 +1,4 @@
-Problem_Link : https://leetcode.com/problems/maximum-subarray/?envType=study-plan&id=data-structure-i
+Problem_Link : https://leetcode.com/problems/maximum-subarray/
 Profile : https://leetcode.com/abdallahessam2029/
 
 class Solution {
