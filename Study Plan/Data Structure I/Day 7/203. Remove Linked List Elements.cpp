@@ -1,3 +1,33 @@
+// My Solution
+
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+
+        ListNode* dummy = new ListNode(); // dummy node
+        dummy -> next = head;
+        ListNode* prev = dummy;
+        ListNode* curr = head ;
+        ListNode* next;
+
+        while(curr)
+        {
+            next = curr->next;
+            if(curr -> val == val)
+                prev -> next = next;
+            else 
+                prev = curr;
+            curr = next;
+        }
+        
+        return dummy -> next;
+    }
+};
+
+
+// Another Solution
+
+
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
