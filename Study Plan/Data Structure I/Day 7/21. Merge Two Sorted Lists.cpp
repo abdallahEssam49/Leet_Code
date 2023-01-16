@@ -2,7 +2,7 @@ class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2){
 
-        ListNode* res = new ListNode(0); // dymmy node
+        ListNode* res = new ListNode(); // dymmy node
         ListNode* temp = res;
         while(l1 && l2){
             if(l1->val < l2->val)
@@ -18,7 +18,7 @@ public:
             temp = temp->next;
         }
         if(l1) temp->next = l1;
-        if(l2) temp->next = l2;
+        else temp->next = l2;
         
         return res->next;
             
